@@ -5,7 +5,6 @@ set ${SET_X:+-x} -eou pipefail
 
 repos=(
     google-chrome
-    vscode
 )
 
 for repo in "${repos[@]}"; do

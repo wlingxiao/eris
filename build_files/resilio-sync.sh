@@ -16,3 +16,6 @@ EOF
 dnf5 install --setopt=install_weak_deps=False -y resilio-sync
 
 sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/resilio-sync.repo"
+
+# https://aur.archlinux.org/cgit/aur.git/tree/rslsync_user.service?h=rslsync
+sed -i 's@WantedBy=multi-user.target@WantedBy=default.target@g' "/usr/lib/systemd/user/resilio-sync.service"
