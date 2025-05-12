@@ -14,3 +14,12 @@ for repo in "${repos[@]}"; do
 done
 
 dnf5 clean all
+
+# https://github.com/m2Giles/m2os/blob/main/build_files/cleanup.sh
+rm -rf /tmp/*
+rm -rf /var/*
+rm -rf /boot/*
+rm -rf /usr/etc
+mkdir -p /tmp
+mkdir -p /var/tmp
+chmod -R 1777 /var/tmp
