@@ -12,23 +12,12 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
-# Resilio Sync
-# https://help.resilio.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux
-tee /etc/yum.repos.d/resilio-sync.repo <<'EOF'
-[resilio-sync]
-name=Resilio Sync
-baseurl=https://linux-packages.resilio.com/resilio-sync/rpm/\$basearch
-enabled=1
-gpgcheck=1
-gpgkey=https://linux-packages.resilio.com/resilio-sync/key.asc
-EOF
-
 dnf5 install --setopt=install_weak_deps=False -y \
-    code \
-    resilio-sync
+    code    
 
 # https://aur.archlinux.org/cgit/aur.git/tree/rslsync_user.service?h=rslsync
 sed -i 's@WantedBy=multi-user.target@WantedBy=default.target@g' "/usr/lib/systemd/user/resilio-sync.service"
 
 /ctx/simplenote.sh
 /ctx/google-chrome.sh
+/ctx/resilio-sync.sh
