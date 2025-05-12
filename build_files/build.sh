@@ -3,7 +3,7 @@
 set ${SET_X:+-x} -eou pipefail
 
 echo "::group:: ===Copr Packages==="
-/ctx/copr-packages.sh
+# /ctx/copr-packages.sh
 echo "::endgroup::"
 
 echo "::group:: ===Desktop Packages==="
