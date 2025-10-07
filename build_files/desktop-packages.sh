@@ -2,7 +2,7 @@
 
 set ${SET_X:+-x} -eou pipefail
 
-dnf downgrade mt7xxx-firmware-20250311-1.fc42
+dnf downgrade -y mt7xxx-firmware-20250311-1.fc42
 
 /ctx/code.sh
 /ctx/simplenote.sh
